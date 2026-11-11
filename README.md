@@ -1,5 +1,14 @@
-# Roblox Up-and-Coming Forecast
+# Roblox Up-and-Coming forecast
 
-A deterministic Python 3.13, standard-library-only forecast based on recent chart ranks and player-count trajectories. It writes the probability forecast and ordered top ten to the output directory.
+This entry estimates each game's next chart position from recent rank movement,
+player-count growth, and time on the chart. It spreads each place's probability
+across plausible candidates and leaves probability mass for unseen surprises.
 
-Run locally with `MAKEFUN_INPUT_DIR=/path/to/input MAKEFUN_OUTPUT_DIR=/path/to/output python3 main.py`. The input directory must contain `task.json` and `history.ndjson`.
+Run locally with Python 3:
+
+```sh
+MAKEFUN_INPUT_DIR=path/to/input MAKEFUN_OUTPUT_DIR=out python3 main.py
+```
+
+The program reads `task.json` and `history.ndjson` from the input directory and
+writes the task's forecast filename to the output directory.
